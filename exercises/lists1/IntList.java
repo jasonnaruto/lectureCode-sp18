@@ -16,11 +16,12 @@ public class IntList {
 
 	/** Return the size of the list using no recursion! */
 	public int iterativeSize() {
-		while (int iSize = 1; rest != null; iSize +=1){ 
-			/** 只有for循环才有此类用法*/ 
-			/** for循环中ISize也算是局部变量，用完就会消失*/
-			rest = this.rest();
-		}return iSize;
+		IntList p = this; /** A final variable may only be assigned to once. We could not use this = this.rest.*/
+		int iterSize = 0; /** Be sure to tell Java what type the variable is!! */
+		for (p != null){
+			iterSize += 1;
+			p = p.rest;
+		}return iterSize;
 	}
 
 	/** Returns the ith value in this list.*/
