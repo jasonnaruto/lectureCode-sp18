@@ -16,7 +16,9 @@ public class IntList {
 
 	/** Return the size of the list using no recursion! */
 	public int iterativeSize() {
-		while (int iSize = 1; rest != null; iSize +=1){
+		while (int iSize = 1; rest != null; iSize +=1){ 
+			/** 只有for循环才有此类用法*/ 
+			/** for循环中ISize也算是局部变量，用完就会消失*/
 			rest = this.rest();
 		}return iSize;
 	}
